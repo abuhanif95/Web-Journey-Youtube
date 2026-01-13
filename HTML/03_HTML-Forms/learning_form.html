@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+<body>
+    <h2 style="text-align: center;">HTML Form</h2>
+    <form action="#">
+        <fieldset>
+          <!-- <legend>HTML Form</legend> -->
+          <label for="name">Username:</label>
+          <input type="text" id="name" placeholder="enter name">
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="enter email"><br><br>
+  
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="enter password">
+
+          <label for="datepicker">Choose Date:</label>
+          <input type="date" name="date" id="datepicker"><br><br>
+
+          <label for="selector">Choose your Dish:</label>
+          <select name="dishes" id="selector">
+              <option value="Maggi">Maggi</option>
+              <option value="Juice">Juice</option>
+              <option value="chips">Chips</option>
+          </select><br><br>
+          
+          <textarea name="textarea" id="textarea" cols="30" rows="5" placeholder="enter text here....."></textarea><br>
+
+          <span>Select your Gender:</span>
+          <input type="radio" name="gender" id="male">
+          <label for="male">Male</label>
+
+           <input type="radio" name="gender" id="female">
+          <label for="female">Female</label>
+
+          <input type="radio" name="gender" id="others">
+          <label for="others">Others</label> <br><br>
+
+          <span>Select your Skills:</span>
+          <input type="checkbox" name="lang" id="html">
+          <label for="html">HTML</label>
+
+          <input type="checkbox" name="lang" id="css">
+          <label for="css">CSS</label>
+
+          <input type="checkbox" name="lang" id="js">
+          <label for="js">JavaScript</label><br><br>
+
+          <label for="fileselect">Upload:</label>
+          <input type="file" name="file" id="fileselect"><br><br>
+          
+          <input type="submit" value="Submit"><br>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Job Application</h2>
+    <form action="#">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="enter username"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" placeholder="enter email"><br><br>
+
+        <label for="tel">Phone:</label>
+        <input type="tel" name="Phone" id="tel" placeholder="enter phone number"><br><br>
+
+        <p>
+           <label for="resume">Resume:</label>
+        </p> 
+        <input type="file" name="resume" id="resume"><br><br>
+
+        <label for="counter">Experience (in years):</label>
+        <input type="number" name="counter" id="counter" min="0" max="45"><br><br>
+
+        <fieldset>
+          <legend>Skills</legend>
+            <input type="checkbox" name="lang" id="html">
+            <label for="html">HTML</label>
+
+            <input type="checkbox" name="lang" id="css">
+            <label for="css">CSS</label>
+
+            <input type="checkbox" name="lang" id="js">
+            <label for="js">JavaScript</label>
+        </fieldset><br>
+        <label for="occupation">Highest Education:</label>
+        <select name="occupation" id="occupation">
+            <option value="school">High School</option>
+            <option value="college">Bachelor's Degree</option>
+            <option value="university">PHD</option>
+        </select><br><br>
+
+        <fieldset>
+            <legend>Availability</legend>
+
+            <input type="radio" id="full" name="duty">
+            <label for="full">Full-Time</label><br><br>
+            
+            <input type="radio" id="part" name="duty">
+            <label for="part">Part-Time</label>
+        </fieldset><br>
+
+        <label for="textarea">Additional Comments:</label><br>
+        <textarea name="textarea" id="textarea" placeholder="give your feedback...." cols="30" rows="5"></textarea><br>
+
+        <input type="submit" value="Submit Application">
+    </form>
+    
+</body>
+</html>
