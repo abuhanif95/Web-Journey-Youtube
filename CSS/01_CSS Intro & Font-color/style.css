@@ -1,0 +1,14 @@
+h1{
+    font-size: smaller;
+    text-align: center;
+}
+#name{
+    background-color: green;
+}
+article{
+    color: brown;
+}
+footer{
+    color: gold;
+    background-color: aquamarine;
+}
