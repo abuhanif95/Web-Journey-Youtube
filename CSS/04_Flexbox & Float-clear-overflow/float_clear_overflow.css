@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: beige;
+    color: rgb(37, 6, 6);
+    font-weight: bold;
+    font-size: 15px;
+}
+div{
+   margin-bottom: 10px;
+}
+.container{
+    background-color: #c99999;
+    width: 100vw;
+}
+.container2{
+    background-color: #c2447f;
+    width: 100vw;
+}
+p{
+    margin-bottom: 15px;
+}
+img{
+    height: 250px;
+}
+.img1{
+    float: left;
+}
+.img2{
+    float: right;
+}
+#img1{
+    float: right;
+}
+#img2{
+    float: right;
+    clear: right;
+}
+.box{
+    border: 1px solid black;
+    overflow: auto;
+}
+.item{
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    float: left;
+}
+.item1{
+    overflow: auto;
+}
+.item2{
+    overflow: scroll;
+}
+.item3{
+    overflow: inherit;
+    float: right;
+}
