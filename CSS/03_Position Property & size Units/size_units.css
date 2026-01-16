@@ -1,0 +1,45 @@
+h2{
+    border: 2px solid salmon;
+    text-align: center;
+}
+.parent{
+    border: 2px solid blueviolet;
+    background-color: bisque;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    font-size: 30px;
+    margin: 10px;
+}
+.child{
+    border: 2px solid rgb(133, 19, 99);
+    background-color: rgb(246, 175, 88);
+    height: 40%;
+    width: 40%;
+    font-size: 30px;
+    margin: 10px;
+}
+.container{
+    border: 2px solid green;
+    background-color: beige;
+    height: 20vh;
+    width: 50vw;
+    font-size: 25px;
+    font-weight: bold;
+}
+.wrapper{
+    font-size: 15px;
+    border: 2px solid black;
+}
+.px{
+    width: 200px;
+    font-size: 10px;
+}
+.vw{
+    width: 10vw;
+    font-size: 1.5rem;
+}
+.em{
+    width: 10em;
+    font-size: 2em;
+}
