@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: beige;
+    border: 3px solid black;
+    position: relative; /* Added this to contain the absolutely positioned box */
+}
+
+.box {
+    width: 350px;
+    height: 50px;
+    background-color: blue;
+    border: 3px solid black;
+    margin: 10px;
+    border-radius: 10px;
+    /* animation-name: Movement;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-fill-mode: none; */
+    animation: Movement 4s linear 0s infinite alternate none;
+    position: absolute;
+}
+
+@keyframes Movement {
+    from {
+        left: 0;
+    }
+    to {
+        left: 1050px; 
+    }
+}
+
+.box02 {
+    width: 350px;
+    height: 50px;
+    background-color: blue;
+    border: 3px solid black;
+    margin: 10px;
+    border-radius: 10px;
+    /* animation-name: Movement;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-fill-mode: none; */
+    animation: leftMovement 4s linear 0s infinite alternate none;
+    position: absolute;
+}
+
+@keyframes leftMovement {
+    from {
+        left: 85%; 
+        top: 90%;
+    }
+    to {
+        left: 0;
+        top: 90%;
+    }
+}
+#circle{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border: 3px solid black;
+    margin: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: 40%;
+    left: 40%;
+    animation: circleMovement 4s linear 0s infinite alternate none;
+
+}
+
+@keyframes circleMovement {
+    0%{
+        top: 10%;
+        left: 5%;
+    }
+    30%{
+        top: 20%;
+        left: 85%;
+    }
+    60%{
+        top: 50%;
+        left: 10%;
+    }
+    100%{
+        top: 75%;
+        left: 85%;
+    }
+}
