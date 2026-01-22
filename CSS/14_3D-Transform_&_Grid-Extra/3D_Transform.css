@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(250, 136, 226);
+}
+.container{
+
+    padding: 5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+.item{
+    height: 250px;
+    width: 250px;
+    background-color: rgb(226, 91, 116);
+    border: 2px solid black;
+    padding: 2rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+   
+}
+#rotateX{
+    transform: rotateX(45deg);
+}
+#rotateY{
+    transform: rotateY(45deg);
+}
+#rotateZ{
+    transform: rotateZ(45deg);
+}
+#translateX{
+    transform: translateX(-50px);
+}
+#translateY{
+    transform: translateY(-50px);
+}
+#translateZ{
+    transform: perspective(300px) translateZ(-50px);
+}
+#scaleX{
+    transform: scaleX(1.3);
+}
+#scaleY{
+    transform: scaleY(1.3);
+}
+#scaleZ{
+    transform: perspective(300px) skewY(30deg);
+}
