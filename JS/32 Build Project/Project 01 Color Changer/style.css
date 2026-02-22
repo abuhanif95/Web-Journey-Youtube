@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #212121;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ff6f61;
+  transform: translateY(-2px);
+}
+
+nav a[aria-current="page"] {
+  background-color: #ff6f61;
+}
+
+/* Main Container */
+.canvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading Styles */
+.canvas h1 {
+  font-size: 2.5rem;
+  color: #212121;
+  margin-bottom: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.canvas h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6f61, #4ecdc4);
+  border-radius: 2px;
+}
+
+/* Color Container */
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px 0;
+  padding: 20px;
+}
+
+/* Button Styles */
+.button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid transparent;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #212121;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+/* Individual Color Buttons */
+#grey {
+  background-color: #808080;
+}
+
+#white {
+  background-color: #ffffff;
+  border: 2px solid #212121;
+}
+
+#blue {
+  background-color: #0000ff;
+}
+
+#yellow {
+  background-color: #ffff00;
+  border: 2px solid #212121;
+}
+
+/* Instruction Text */
+.instruction {
+  font-size: 1.2rem;
+  color: #212121;
+  margin-top: 30px;
+  line-height: 1.6;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.instruction span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .canvas h1 {
+    font-size: 2rem;
+  }
+
+  .button {
+    width: 100px;
+    height: 100px;
+  }
+
+  .color-container {
+    gap: 15px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    width: 200px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas h1 {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .instruction {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.canvas {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Focus styles for accessibility */
+.button:focus-visible {
+  outline: 3px solid #ff6f61;
+  outline-offset: 3px;
+}
+
+/* Optional: Add a subtle pattern to white button */
+#white {
+  background-image: radial-gradient(
+    circle at 30% 30%,
+    #f0f0f0 2px,
+    transparent 2px
+  );
+  background-size: 20px 20px;
+}
