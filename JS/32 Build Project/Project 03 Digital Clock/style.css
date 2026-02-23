@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+nav a[aria-current="page"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Center Container */
+.center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Banner Styles */
+#banner {
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease;
+}
+
+#banner span {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#banner span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+    animation: widthGrow 1s ease 0.5s both;
+}
+
+/* Clock Styles */
+#clock {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 0 2px rgba(255, 255, 255, 0.1) inset;
+    color: white;
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5),
+                 0 0 20px rgba(102, 126, 234, 0.3),
+                 0 0 30px rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 5px;
+    animation: glowPulse 2s infinite, fadeInUp 1s ease 0.3s both;
+    min-width: 500px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes widthGrow {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100px;
+        opacity: 1;
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                    0 0 0 2px rgba(255, 255, 255, 0.1) inset,
+                    0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    50% {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
+                    0 0 0 2px rgba(255, 255, 255, 0.2) inset,
+                    0 0 40px rgba(102, 126, 234, 0.6);
+    }
+    100% {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                    0 0 0 2px rgba(255, 255, 255, 0.1) inset,
+                    0 0 20px rgba(102, 126, 234, 0.3);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #clock {
+        font-size: 3.5rem;
+        padding: 30px 40px;
+        min-width: 400px;
+    }
+
+    #banner span {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav a {
+        width: 200px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #clock {
+        font-size: 2.5rem;
+        padding: 20px 30px;
+        min-width: 300px;
+        letter-spacing: 3px;
+    }
+
+    #banner span {
+        font-size: 1.2rem;
+    }
+
+    #banner span::after {
+        width: 60px;
+    }
+
+    @keyframes widthGrow {
+        to {
+            width: 60px;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    #clock {
+        font-size: 2rem;
+        padding: 15px 20px;
+        min-width: 250px;
+        letter-spacing: 2px;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .center {
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    #clock {
+        font-size: 3rem;
+        padding: 20px 40px;
+    }
+}
+
+/* Dark Mode Preference (already dark by default) */
+@media (prefers-color-scheme: light) {
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+}
+
+/* Optional: Add a subtle background pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Hover effect for clock */
+#clock:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+nav a:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
