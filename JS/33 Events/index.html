@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events · unsplash refresh</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          sans-serif;
+        background: linear-gradient(145deg, #f8fafc 0%, #eef2f5 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      .card {
+        max-width: 1300px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(4px);
+        border-radius: 2.5rem;
+        box-shadow:
+          0 20px 40px -12px rgba(0, 20, 30, 0.25),
+          0 8px 24px -6px rgba(0, 0, 0, 0.1);
+        padding: 2.5rem 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+
+      h2 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 0.4rem;
+        padding-left: 0.5rem;
+      }
+
+      h2 span {
+        background: #1e293b;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 400;
+        padding: 0.2rem 1rem;
+        border-radius: 40px;
+        letter-spacing: 0.3px;
+        margin-left: 0.75rem;
+      }
+
+      .sub {
+        color: #475569;
+        margin-bottom: 2rem;
+        padding-left: 0.5rem;
+        font-weight: 350;
+        border-left: 4px solid #94a3b8;
+        padding-left: 1.2rem;
+      }
+
+      ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem 1.5rem;
+        margin-top: 1rem;
+      }
+
+      li {
+        background: white;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow:
+          0 8px 18px -6px rgba(0, 0, 0, 0.15),
+          0 0 0 1px rgba(0, 0, 0, 0.02);
+        transition: all 0.25s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.2rem 1.2rem 0.8rem 1.2rem;
+      }
+
+      li:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 22px 28px -12px rgba(0, 40, 60, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.8);
+        background: #ffffffec;
+      }
+
+      /* image wrapper for consistent aspect */
+      .image-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 1.5rem;
+        background: #e2e8f0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: 0.2s linear;
+        border: 2px solid white;
+      }
+
+      li:hover img {
+        border-color: #b0c4de;
+      }
+
+      .img-label {
+        margin-top: 0.6rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #334155;
+        opacity: 0.8;
+        text-transform: lowercase;
+        letter-spacing: 0.3px;
+      }
+
+      .img-label::first-letter {
+        text-transform: uppercase;
+      }
+
+      .footer-note {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #5a6b7c;
+        border-top: 1px dashed #cbd5e1;
+        padding-top: 1.8rem;
+      }
+
+      .footer-note a {
+        color: #1e293b;
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 1.5px dotted #7195b3;
+      }
+
+      .footer-note a:hover {
+        border-bottom: 2px solid #0f172a;
+      }
+
+      /* small screens */
+      @media (max-width: 550px) {
+        .card {
+          padding: 1.5rem;
+        }
+        h2 {
+          font-size: 1.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>
+        ✦ amazing unsplash moments
+        <span>fresh</span>
+      </h2>
+      <div class="sub">
+        carefully selected high‑res images · all from unsplash
+      </div>
+
+      <!-- image list: all src are genuine unsplash photos (working links) with added id attributes -->
+      <ul id="images">
+        <!-- 1. japan / torii gate (classic unsplash) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-kyoto-gate"
+              width="200"
+              src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="japan temple in autumn"
+              loading="lazy"
+            />
+            <span class="img-label">⛩️ kyoto gate</span>
+          </div>
+        </li>
+
+        <!-- 2. mountain river (amazing landscape) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-icelandic-river"
+              width="200"
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="river in mountains"
+              loading="lazy"
+            />
+            <span class="img-label">🏞️ icelandic river</span>
+          </div>
+        </li>
+
+        <!-- 3. kingfisher (replaces owl) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-kingfisher"
+              width="200"
+              src="https://images.unsplash.com/photo-1555169062-013468b47731?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="colorful kingfisher on branch"
+              loading="lazy"
+            />
+            <span class="img-label">🐦 kingfisher</span>
+          </div>
+        </li>
+
+        <!-- 4. creative studio (replaces photoshop workspace) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-creative-studio"
+              width="200"
+              src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="laptop and tablet for design work"
+              loading="lazy"
+            />
+            <span class="img-label">🖥️ creative studio</span>
+          </div>
+        </li>
+
+        <!-- 5. extra – minimal ocean wave (amazing) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-ocean-swell"
+              width="200"
+              src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="ocean wave at sunset"
+              loading="lazy"
+            />
+            <span class="img-label">🌊 pacific swell</span>
+          </div>
+        </li>
+
+        <!-- 6. extra – cityscape (japan modern) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-shibuya-night"
+              width="200"
+              src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="tokyo street at night"
+              loading="lazy"
+            />
+            <span class="img-label">🌃 shibuya night</span>
+          </div>
+        </li>
+
+        <!-- 7. extra – forest river (sunlit woods) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-forest-creek"
+              width="200"
+              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="sunlight forest river"
+              loading="lazy"
+            />
+            <span class="img-label">🌲 forest creek</span>
+          </div>
+        </li>
+
+        <!-- 8. extra – design / tablet (hand drawing) -->
+        <li>
+          <div class="image-wrapper">
+            <img
+              id="img-digital-drawing"
+              width="200"
+              src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop&auto=format&q=80"
+              alt="digital tablet with stylus"
+              loading="lazy"
+            />
+            <span class="img-label">✏️ digital drawing</span>
+          </div>
+        </li>
+
+        <a href="https://www.google.com" id="google"> Google</a>
+      </ul>
+
+      <div class="footer-note">
+        ✨ eight amazing unsplash images · inspired by "japan, river,
+        kingfisher, creative studio"<br />
+        <a href="#" target="_blank">view collection on unsplash ↗</a>
+        <span style="opacity: 0.4; margin: 0 0.5rem">|</span>
+        <span>free to use · now with unique image IDs</span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
