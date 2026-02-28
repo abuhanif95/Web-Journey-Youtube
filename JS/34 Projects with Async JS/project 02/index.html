@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Press Magic</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+      }
+
+      .project {
+        width: 100%;
+        max-width: 800px;
+      }
+
+      #insert {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      th {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+      }
+
+      td {
+        padding: 15px;
+        background: white;
+        color: #333;
+        font-weight: 500;
+        border-bottom: 1px solid #eee;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .magic-text {
+        font-size: 2rem;
+        margin-top: 20px;
+        color: #764ba2;
+        font-weight: bold;
+        animation: bounce 1s ease;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        #insert {
+          padding: 2rem 1rem;
+        }
+
+        table {
+          font-size: 1rem;
+        }
+
+        th,
+        td {
+          padding: 10px;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        #insert {
+          background: rgba(30, 30, 30, 0.95);
+        }
+
+        td {
+          background: #333;
+          color: #fff;
+          border-bottom: 1px solid #444;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="project">
+      <div id="insert">
+        <div class="magic-text">✨ Press any key ✨</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
