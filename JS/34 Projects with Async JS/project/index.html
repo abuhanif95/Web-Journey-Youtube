@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlimited Color</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transition: background-color 0.3s ease;
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      h1 {
+        color: #333;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        word-wrap: break-word;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      button {
+        padding: 1rem 2.5rem;
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        min-width: 140px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      button:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+
+      #start {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      #start:hover {
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        transform: translateY(-2px);
+      }
+
+      #stop {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+      }
+
+      #stop:hover {
+        box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .color-info {
+        margin-top: 2rem;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        font-size: 1.1rem;
+        color: #555;
+        word-wrap: break-word;
+      }
+
+      .current-color {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 2rem 1rem;
+        }
+
+        .button-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        button {
+          width: 100%;
+          max-width: 250px;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .container {
+          background: rgba(30, 30, 30, 0.95);
+        }
+
+        .color-info {
+          color: #ddd;
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .current-color {
+          background: rgba(0, 0, 0, 0.3);
+          color: #fff;
+        }
+      }
+
+      /* Animation for color change */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .color-change {
+        animation: pulse 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Unlimited Color</h1>
+      <div class="button-container">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
